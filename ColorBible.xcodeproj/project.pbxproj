@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5AE001461CAA47A10058B744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001451CAA47A10058B744 /* AppDelegate.swift */; };
-		5AE001481CAA47A10058B744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001471CAA47A10058B744 /* ViewController.swift */; };
 		5AE0014B1CAA47A10058B744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE001491CAA47A10058B744 /* Main.storyboard */; };
 		5AE0014E1CAA47A10058B744 /* ColorBible.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0014C1CAA47A10058B744 /* ColorBible.xcdatamodeld */; };
 		5AE001501CAA47A10058B744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE0014F1CAA47A10058B744 /* Assets.xcassets */; };
 		5AE001531CAA47A10058B744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE001511CAA47A10058B744 /* LaunchScreen.storyboard */; };
 		5AE0015E1CAA47A10058B744 /* ColorBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0015D1CAA47A10058B744 /* ColorBibleTests.swift */; };
 		5AE001691CAA47A10058B744 /* ColorBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001681CAA47A10058B744 /* ColorBibleUITests.swift */; };
+		5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001761CAA872B0058B744 /* ColorSelectorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		5AE001421CAA47A10058B744 /* ColorBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE001451CAA47A10058B744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AE001471CAA47A10058B744 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AE0014A1CAA47A10058B744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AE0014D1CAA47A10058B744 /* ColorBible.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColorBible.xcdatamodel; sourceTree = "<group>"; };
 		5AE0014F1CAA47A10058B744 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		5AE001641CAA47A10058B744 /* ColorBibleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBibleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE001681CAA47A10058B744 /* ColorBibleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBibleUITests.swift; sourceTree = "<group>"; };
 		5AE0016A1CAA47A10058B744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE001761CAA872B0058B744 /* ColorSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelectorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				5AE001451CAA47A10058B744 /* AppDelegate.swift */,
-				5AE001471CAA47A10058B744 /* ViewController.swift */,
 				5AE001491CAA47A10058B744 /* Main.storyboard */,
+				5AE001761CAA872B0058B744 /* ColorSelectorController.swift */,
 				5AE0014F1CAA47A10058B744 /* Assets.xcassets */,
 				5AE001511CAA47A10058B744 /* LaunchScreen.storyboard */,
 				5AE001541CAA47A10058B744 /* Info.plist */,
@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					5AE001411CAA47A10058B744 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = E9MW74DJ4Y;
 					};
 					5AE001581CAA47A10058B744 = {
 						CreatedOnToolsVersion = 7.3;
@@ -260,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE0014E1CAA47A10058B744 /* ColorBible.xcdatamodeld in Sources */,
-				5AE001481CAA47A10058B744 /* ViewController.swift in Sources */,
+				5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */,
 				5AE001461CAA47A10058B744 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +406,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ColorBible/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorBible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,7 +419,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ColorBible/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorBible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +493,7 @@
 				5AE0016F1CAA47A10058B744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AE001701CAA47A10058B744 /* Build configuration list for PBXNativeTarget "ColorBibleTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +502,7 @@
 				5AE001721CAA47A10058B744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AE001731CAA47A10058B744 /* Build configuration list for PBXNativeTarget "ColorBibleUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +511,7 @@
 				5AE001751CAA47A10058B744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
