@@ -63,16 +63,7 @@ class ColorSelectorController: UITableViewController {
             preview.backgroundColor = color
         }
         
-        var rF: CGFloat = 0,
-        gF: CGFloat = 0,
-        bF: CGFloat = 0,
-        aF: CGFloat = 0
-        color.getRed(&rF, green: &gF, blue: &bF, alpha: &aF)
-        let r = Int(rF * 255.0)
-        let g = Int(gF * 255.0)
-        let b = Int(bF * 255.0)
-        
-        hexField.text = "#" + String(format: "%02x%02x%02x", r, g, b)
+        hexField.text = color.hexDescription()
     }
 }
 
@@ -100,6 +91,11 @@ extension UIColor {
         NSScanner.init(string: gString).scanHexInt(&g)
         NSScanner.init(string: bString).scanHexInt(&b)
         
+        if (rString != "00" && r == 0) || (gString != "00" && g == 0) || (bString != "00" && b == 0) {
+            return nil
+        }
+        
+        
         var h: CGFloat = 0
         var s: CGFloat = 0
         var v: CGFloat = 0
@@ -108,5 +104,18 @@ extension UIColor {
         color.getHue(&h, saturation: &s, brightness: &v, alpha: &a)
         
         return (color, Float(r) / 255.0, Float(g) / 255.0, Float(b) / 255.0, Float(h), Float(s), Float(v))
+    }
+    
+    public func hexDescription() -> String {
+        var rF: CGFloat = 0,
+        gF: CGFloat = 0,
+        bF: CGFloat = 0,
+        aF: CGFloat = 0
+        self.getRed(&rF, green: &gF, blue: &bF, alpha: &aF)
+        let r = Int(rF * 255.0)
+        let g = Int(gF * 255.0)
+        let b = Int(bF * 255.0)
+        
+        return "#" + String(format: "%02x%02x%02x", r, g, b)
     }
 }
