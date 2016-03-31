@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class ColorDetailsController: UITableViewController {
 
@@ -25,29 +26,53 @@ class ColorDetailsController: UITableViewController {
         hLabel.text = "\(colorTuple.h)"
         sLabel.text = "\(colorTuple.s)"
         vLabel.text = "\(colorTuple.v)"
+        
+        ToastManager.shared.queueEnabled = false
+        ToastManager.shared.tapToDismissEnabled = true
     }
 
+    @IBAction func addFavouriteClick(sender: UIBarButtonItem) {
+        let dataContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+        
+        if dataContext != nil {
+            let entity = NSEntityDescription.entityForName("Favourites", inManagedObjectContext: dataContext)
+            let request = NSFetchRequest()
+            request.entity = entity
+            let favourites = try? dataContext.executeFetchRequest(request) as! [Favourites]
+            
+            for item in favourites! {
+                if item.colorValue == self.color.intValue() {
+                    self.view.makeToast("Your favourites already contains this color!", duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                    return
+                }
+            }
+            
+            _ = Favourites(entity: entity!, insertIntoManagedObjectContext: dataContext, color: Int32(self.color.intValue()))
+            
+            if dataContext.saveData() {
+                //self.view.makeToast(String(format: "The color %@ has been added to your favourites.", self.color.hexDescription()), duration: 3.0, position: .Center)
+                self.view.makeToast(String(format: "The color %@ has been added to your favourites.", self.color.hexDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
+            } else {
+                self.view.makeToast(String(format: "An error occurred while adding the color to your favourites.", self.color.intValue()))
+            }
+        }
+
+    }
+    
     @IBAction func doneClicked(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    // MARK: - Table view data source
 
-    /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+}
+
+extension NSManagedObjectContext {
+    func saveData() -> Bool {
+        do {
+            try self.save()
+            return true
+        } catch let error as NSError {
+            print(error)
+            return false;
+        }
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        return cell
-    }*/
-
 }

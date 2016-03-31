@@ -17,6 +17,11 @@
 		5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001761CAA872B0058B744 /* ColorSelectorController.swift */; };
 		5AEFADE81CACC2F200F2D52F /* ColorPasserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADE71CACC2F200F2D52F /* ColorPasserController.swift */; };
 		5AEFADEA1CACC36500F2D52F /* ColorDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADE91CACC36500F2D52F /* ColorDetailsController.swift */; };
+		5AEFADED1CAD194400F2D52F /* Favourites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADEB1CAD194400F2D52F /* Favourites+CoreDataProperties.swift */; };
+		5AEFADEE1CAD194400F2D52F /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADEC1CAD194400F2D52F /* Favourites.swift */; };
+		5AEFADF01CAD1CDB00F2D52F /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADEF1CAD1CDB00F2D52F /* FavouritesController.swift */; };
+		5AEFADF41CAD388200F2D52F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFADF31CAD388200F2D52F /* Toast.swift */; };
+		5AEFADF61CAD468D00F2D52F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFADF51CAD468D00F2D52F /* QuartzCore.framework */; };
 		5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */; };
 		5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC3311CAB767C003309C5 /* ColorCell.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +60,11 @@
 		5AE001761CAA872B0058B744 /* ColorSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelectorController.swift; sourceTree = "<group>"; };
 		5AEFADE71CACC2F200F2D52F /* ColorPasserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPasserController.swift; sourceTree = "<group>"; };
 		5AEFADE91CACC36500F2D52F /* ColorDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetailsController.swift; sourceTree = "<group>"; };
+		5AEFADEB1CAD194400F2D52F /* Favourites+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Favourites+CoreDataProperties.swift"; path = "../Favourites+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5AEFADEC1CAD194400F2D52F /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Favourites.swift; path = ../Favourites.swift; sourceTree = "<group>"; };
+		5AEFADEF1CAD1CDB00F2D52F /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
+		5AEFADF31CAD388200F2D52F /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = ../Toast.swift; sourceTree = "<group>"; };
+		5AEFADF51CAD468D00F2D52F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColorsViewController.swift; sourceTree = "<group>"; };
 		5AEFC3311CAB767C003309C5 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEFADF61CAD468D00F2D52F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +98,7 @@
 		5AE001391CAA47A00058B744 = {
 			isa = PBXGroup;
 			children = (
+				5AEFADF51CAD468D00F2D52F /* QuartzCore.framework */,
 				5AE001441CAA47A10058B744 /* ColorBible */,
 				5AE0015C1CAA47A10058B744 /* ColorBibleTests */,
 				5AE001671CAA47A10058B744 /* ColorBibleUITests */,
@@ -107,17 +119,21 @@
 		5AE001441CAA47A10058B744 /* ColorBible */ = {
 			isa = PBXGroup;
 			children = (
+				5AEFADF31CAD388200F2D52F /* Toast.swift */,
 				5AE001451CAA47A10058B744 /* AppDelegate.swift */,
 				5AE001491CAA47A10058B744 /* Main.storyboard */,
 				5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */,
 				5AE001761CAA872B0058B744 /* ColorSelectorController.swift */,
 				5AEFADE71CACC2F200F2D52F /* ColorPasserController.swift */,
 				5AEFADE91CACC36500F2D52F /* ColorDetailsController.swift */,
+				5AEFADEF1CAD1CDB00F2D52F /* FavouritesController.swift */,
 				5AEFC3311CAB767C003309C5 /* ColorCell.swift */,
 				5AE0014F1CAA47A10058B744 /* Assets.xcassets */,
 				5AE001511CAA47A10058B744 /* LaunchScreen.storyboard */,
 				5AE001541CAA47A10058B744 /* Info.plist */,
 				5AE0014C1CAA47A10058B744 /* ColorBible.xcdatamodeld */,
+				5AEFADEB1CAD194400F2D52F /* Favourites+CoreDataProperties.swift */,
+				5AEFADEC1CAD194400F2D52F /* Favourites.swift */,
 			);
 			path = ColorBible;
 			sourceTree = "<group>";
@@ -273,11 +289,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFADEA1CACC36500F2D52F /* ColorDetailsController.swift in Sources */,
+				5AEFADED1CAD194400F2D52F /* Favourites+CoreDataProperties.swift in Sources */,
 				5AE0014E1CAA47A10058B744 /* ColorBible.xcdatamodeld in Sources */,
 				5AEFADE81CACC2F200F2D52F /* ColorPasserController.swift in Sources */,
 				5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */,
+				5AEFADF01CAD1CDB00F2D52F /* FavouritesController.swift in Sources */,
 				5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */,
 				5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */,
+				5AEFADF41CAD388200F2D52F /* Toast.swift in Sources */,
+				5AEFADEE1CAD194400F2D52F /* Favourites.swift in Sources */,
 				5AE001461CAA47A10058B744 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

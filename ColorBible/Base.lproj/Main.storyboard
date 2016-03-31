@@ -18,17 +18,18 @@
                     <connections>
                         <segue destination="68C-vT-8N9" kind="relationship" relationship="viewControllers" id="S6d-dd-9lE"/>
                         <segue destination="5ib-4A-gSb" kind="relationship" relationship="viewControllers" id="ZYO-KV-Nog"/>
+                        <segue destination="MIW-ha-2h7" kind="relationship" relationship="viewControllers" id="58j-h6-sPb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnF-cs-YJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="835"/>
+            <point key="canvasLocation" x="-574" y="1019"/>
         </scene>
         <!--Color Selector-->
         <scene sceneID="L61-R9-5vr">
             <objects>
                 <navigationController id="68C-vT-8N9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Color Selector" id="AEA-ce-Bd2"/>
+                    <tabBarItem key="tabBarItem" title="Color Selector" image="color selector" selectedImage="color selector filled" id="AEA-ce-Bd2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fxz-4H-Fle">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -211,7 +212,7 @@
         <scene sceneID="jm5-jJ-Hia">
             <objects>
                 <navigationController id="5ib-4A-gSb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Random Colors" id="X0C-Qb-EqG"/>
+                    <tabBarItem key="tabBarItem" title="Random Colors" image="random color" selectedImage="random color filled" id="X0C-Qb-EqG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJt-LV-kOc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,6 +265,79 @@
             <point key="canvasLocation" x="1383" y="835"/>
         </scene>
         <!--Root View Controller-->
+        <scene sceneID="heA-Dc-FcY">
+            <objects>
+                <tableViewController id="NWk-Hw-ssN" customClass="FavouritesController" customModule="ColorBible" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ewz-ag-Edx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell1" id="slG-qt-R86">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="slG-qt-R86" id="zPc-SE-SWv">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="KkP-bq-AoZ">
+                                            <rect key="frame" x="8" y="0.0" width="42" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="XbW-Nq-Ejs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwR-dE-kkL">
+                                            <rect key="frame" x="58" y="11" width="192" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="192" id="2G8-Eo-eXb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KkP-bq-AoZ" firstAttribute="leading" secondItem="zPc-SE-SWv" secondAttribute="leadingMargin" id="CLK-pQ-gOK"/>
+                                        <constraint firstItem="JwR-dE-kkL" firstAttribute="centerY" secondItem="KkP-bq-AoZ" secondAttribute="centerY" id="Igo-vA-uhR"/>
+                                        <constraint firstItem="JwR-dE-kkL" firstAttribute="leading" secondItem="KkP-bq-AoZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Zbl-y1-5ch"/>
+                                        <constraint firstItem="KkP-bq-AoZ" firstAttribute="centerY" secondItem="zPc-SE-SWv" secondAttribute="centerY" id="ZmT-Yz-DAA"/>
+                                        <constraint firstItem="KkP-bq-AoZ" firstAttribute="top" secondItem="zPc-SE-SWv" secondAttribute="top" id="vla-A4-ySh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NWk-Hw-ssN" id="sJo-Mh-318"/>
+                            <outlet property="delegate" destination="NWk-Hw-ssN" id="Eav-f3-XFL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="GIF-2O-VFp"/>
+                    <connections>
+                        <segue destination="RAF-aR-dNF" kind="presentation" identifier="favToDetails" modalPresentationStyle="formSheet" id="FL8-pc-g9i"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkg-Ia-dtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="1522"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="j3p-m1-8J3">
+            <objects>
+                <navigationController id="MIW-ha-2h7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="favourites" selectedImage="filled favourites" id="Aav-3b-pri"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pax-1L-xa5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NWk-Hw-ssN" kind="relationship" relationship="rootViewController" id="2lq-4u-DGs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BkR-CP-Yv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="1522"/>
+        </scene>
+        <!--Favourites-->
         <scene sceneID="6RY-LP-kph">
             <objects>
                 <tableViewController id="4iG-WC-8ud" customClass="ColorDetailsController" customModule="ColorBible" customModuleProvider="target" sceneMemberID="viewController">
@@ -473,7 +547,12 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="wpN-km-NXT">
+                    <navigationItem key="navigationItem" title="Favourites" id="wpN-km-NXT">
+                        <barButtonItem key="leftBarButtonItem" image="add favourite" id="N6Q-ov-OxE">
+                            <connections>
+                                <action selector="addFavouriteClick:" destination="4iG-WC-8ud" id="gvg-JM-OHi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LKM-Kv-3Tz">
                             <connections>
                                 <action selector="doneClicked:" destination="4iG-WC-8ud" id="p0L-oW-STL"/>
@@ -493,7 +572,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEM-d5-Zto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3152" y="836"/>
+            <point key="canvasLocation" x="3752" y="628"/>
         </scene>
         <!--Color Passer Controller-->
         <scene sceneID="KC2-dq-gRg">
@@ -509,13 +588,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gov-mW-MHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="835"/>
+            <point key="canvasLocation" x="2918" y="627"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add favourite" width="25" height="25"/>
+        <image name="color selector" width="25" height="25"/>
+        <image name="color selector filled" width="25" height="25"/>
+        <image name="favourites" width="25" height="25"/>
+        <image name="filled favourites" width="25" height="25"/>
         <image name="frame" width="120" height="120"/>
+        <image name="random color" width="25" height="25"/>
+        <image name="random color filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XCq-AZ-21w"/>
+        <segue reference="FL8-pc-g9i"/>
     </inferredMetricsTieBreakers>
 </document>
