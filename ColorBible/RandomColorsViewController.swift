@@ -4,6 +4,7 @@ import UIKit
 class RandomColorsViewController: UICollectionViewController {
 
     var colors: [Int32] = []
+    var selectedColor: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,17 @@ class RandomColorsViewController: UICollectionViewController {
         }
         collectionView?.reloadData()
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ColorPasserController {
+            vc.color = selectedColor
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        selectedColor = UIColor.hexColor(colors[indexPath.row])
+        performSegueWithIdentifier("randomColorToDetails", sender: self)
+    }
 }
 
 extension UIColor {

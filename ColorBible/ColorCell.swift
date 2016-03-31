@@ -2,7 +2,6 @@ import UIKit
 
 class ColorCell: UICollectionViewCell {
     let label = UILabel()
-    var onClickListener: (() -> Void)?
     var color: UIColor? {
         get {
             return backgroundColor
@@ -27,9 +26,5 @@ class ColorCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        onClickListener?()
     }
 }
