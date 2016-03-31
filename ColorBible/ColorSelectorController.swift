@@ -14,6 +14,11 @@ class ColorSelectorController: UITableViewController {
     
     override func viewDidLoad() {
         loadCurrentColor()
+        tableView.userInteractionEnabled = true
+    }
+    
+    @IBAction func colorDetailsClick(sender: UIButton) {
+        performSegueWithIdentifier("selectorToDetails", sender: self)
     }
     
     @IBAction func colorModeChanged(sender: UISegmentedControl) {
@@ -64,6 +69,12 @@ class ColorSelectorController: UITableViewController {
         }
         
         hexField.text = color.hexDescription()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ColorPasserController {
+            vc.color = preview.backgroundColor
+        }
     }
 }
 
