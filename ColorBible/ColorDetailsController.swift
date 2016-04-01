@@ -50,7 +50,6 @@ class ColorDetailsController: UITableViewController {
             _ = Favourites(entity: entity!, insertIntoManagedObjectContext: dataContext, color: Int32(self.color.intValue()))
             
             if dataContext.saveData() {
-                //self.view.makeToast(String(format: "The color %@ has been added to your favourites.", self.color.hexDescription()), duration: 3.0, position: .Center)
                 self.view.makeToast(String(format: "The color %@ has been added to your favourites.", self.color.hexDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
             } else {
                 self.view.makeToast(String(format: "An error occurred while adding the color to your favourites.", self.color.intValue()))
@@ -64,7 +63,9 @@ class ColorDetailsController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("showSchemes", sender: self)
+        if indexPath.section == 3 && indexPath.row == 0 {
+            performSegueWithIdentifier("showSchemes", sender: self)
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
