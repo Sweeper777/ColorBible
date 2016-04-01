@@ -62,7 +62,16 @@ class ColorDetailsController: UITableViewController {
     @IBAction func doneClicked(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showSchemes", sender: self)
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ColorSchemeController {
+            vc.color = self.color
+        }
+    }
 }
 
 extension NSManagedObjectContext {
