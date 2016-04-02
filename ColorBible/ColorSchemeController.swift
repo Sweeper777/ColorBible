@@ -5,6 +5,7 @@ class ColorSchemeController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 44
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
