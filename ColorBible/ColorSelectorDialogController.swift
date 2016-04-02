@@ -65,5 +65,10 @@ class ColorSelectorDialogController: UITableViewController {
         
         hexField.text = color.hexDescription()
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ColorMixerController {
+            vc.colorSelected = preview.backgroundColor
+        }
+    }
 }
