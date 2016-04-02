@@ -330,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="colorCell" id="MFF-iY-nEw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="colorCell" id="MFF-iY-nEw">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MFF-iY-nEw" id="DJo-tF-rTN">
@@ -447,8 +447,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Color Mixer" id="8rK-MN-gGG">
-                        <barButtonItem key="rightBarButtonItem" title="Mix" id="4UN-yB-oqo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Mix" id="4UN-yB-oqo">
+                            <connections>
+                                <action selector="mixClick:" destination="oQN-87-zPa" id="Pns-Pw-Dej"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="RAF-aR-dNF" kind="presentation" identifier="showResult" modalPresentationStyle="formSheet" id="7A6-K8-g8O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhy-0s-Lm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kdh-Sh-OHX" userLabel="Exit" sceneMemberID="exit"/>
@@ -984,6 +991,6 @@
         <image name="random color filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FL8-pc-g9i"/>
+        <segue reference="7A6-K8-g8O"/>
     </inferredMetricsTieBreakers>
 </document>

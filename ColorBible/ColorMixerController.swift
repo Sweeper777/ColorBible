@@ -6,6 +6,8 @@ class ColorMixerController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ToastManager.shared.queueEnabled = false
+        ToastManager.shared.tapToDismissEnabled = true
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -87,6 +89,26 @@ class ColorMixerController: UITableViewController {
     @IBAction func resetAlpha(sender: UIButton) {
         let slider = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(3)! as! UISlider
         slider.value = 0.5
+    }
+    
+    @IBAction func mixClick(sender: UIBarButtonItem) {
+        let color1 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(1)! as! UIImageView).backgroundColor
+        let color2 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(2)! as! UIImageView).backgroundColor
+        if color1 == nil || color2 == nil {
+            self.view.makeToast("Please select 2 colors before mixing", duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+        } else {
+            performSegueWithIdentifier("showResult", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ColorPasserController {
+            let color1 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(1)! as! UIImageView).backgroundColor!
+            let color2 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(2)! as! UIImageView).backgroundColor!
+            let slider = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(3)! as! UISlider
+            let result = color1.mixWith(color2, myAlpha: CGFloat(slider.value))
+            vc.color = result
+        }
     }
 }
 
