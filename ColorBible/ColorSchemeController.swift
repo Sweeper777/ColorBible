@@ -16,6 +16,11 @@ class ColorSchemeController: UITableViewController {
         case 0...2:
             return 3
         case 3:
+            var h: CGFloat = 0
+            color.getHue(&h, saturation: nil, brightness: nil, alpha: nil)
+            if h == 0 {
+                return 3
+            }
             return 5
         case 4:
             return 2
@@ -73,6 +78,20 @@ class ColorSchemeController: UITableViewController {
             case 0:
                 setColor(self.color)
             case 1:
+                var h: CGFloat = 0
+                color.getHue(&h, saturation: nil, brightness: nil, alpha: nil)
+                
+                if h == 0 {
+                    var v: CGFloat = 0
+                    self.color.getHue(nil, saturation: nil, brightness: &v, alpha: nil)
+                    if v <= 0.1 {
+                        setColor(self.color.incrementValueBy(0.1))
+                    } else {
+                        setColor(self.color.incrementValueBy(-0.1))
+                    }
+                    break
+                }
+                
                 var s: CGFloat = 0
                 self.color.getHue(nil, saturation: &s, brightness: nil, alpha: nil)
                 if s <= 0.1 {
@@ -81,6 +100,20 @@ class ColorSchemeController: UITableViewController {
                     setColor(self.color.incrementSaturationBy(-0.1))
                 }
             case 2:
+                var h: CGFloat = 0
+                color.getHue(&h, saturation: nil, brightness: nil, alpha: nil)
+                
+                if h == 0 {
+                    var v: CGFloat = 0
+                    self.color.getHue(nil, saturation: nil, brightness: &v, alpha: nil)
+                    if v >= 0.9 {
+                        setColor(self.color.incrementValueBy(-0.2))
+                    } else {
+                        setColor(self.color.incrementValueBy(0.2))
+                    }
+                    break
+                }
+                
                 var s: CGFloat = 0
                 self.color.getHue(nil, saturation: &s, brightness: nil, alpha: nil)
                 if s >= 0.9 {
