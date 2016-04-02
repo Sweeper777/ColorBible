@@ -20,7 +20,7 @@ class ColorSchemeController: UITableViewController {
         case 4:
             return 2
         default:
-            assert(false)
+            return 0
         }
     }
     
@@ -136,7 +136,7 @@ class ColorSchemeController: UITableViewController {
         case 4:
             return "Complements"
         default:
-            assert(false)
+            return nil
         }
     }
 }

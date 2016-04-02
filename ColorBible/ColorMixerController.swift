@@ -31,7 +31,7 @@ class ColorMixerController: UITableViewController {
         case 2:
             return "Transparency"
         default:
-            assert(false)
+            return nil
         }
     }
     
