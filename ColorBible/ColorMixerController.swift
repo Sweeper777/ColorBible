@@ -56,7 +56,7 @@ class ColorMixerController: UITableViewController {
         if indexPath.section == 2 {
             return 139
         } else {
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+            return 44
         }
     }
     
@@ -64,7 +64,21 @@ class ColorMixerController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == 0 || indexPath.section == 1 {
             if indexPath.row == 1 {
+                func showFav(action: UIAlertAction) {
+                    performSegueWithIdentifier("showFavouritesSelector", sender: self)
+                }
+                
+                func showSelector(action: UIAlertAction) {
+                    performSegueWithIdentifier("showColorSelector", sender: self)
+                }
+                
                 selectColorFor = indexPath.section
+                let alert = UIAlertController(title: "Select a color from", message: nil, preferredStyle: .ActionSheet)
+                alert.addAction(UIAlertAction(title: "Favourites", style: .Default, handler: showFav))
+                alert.addAction(UIAlertAction(title: "Color Selector", style: .Default, handler: showSelector))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                alert.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
@@ -84,6 +98,10 @@ class ColorMixerController: UITableViewController {
             slider.maximumTrackTintColor = colorSelected
         }
         sliderImage.backgroundColor = colorSelected
+    }
+    
+    @IBAction func unwindWithoutSelection(segue: UIStoryboardSegue) {
+        
     }
     
     @IBAction func resetAlpha(sender: UIButton) {

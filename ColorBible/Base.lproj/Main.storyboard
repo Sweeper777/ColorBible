@@ -378,11 +378,8 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Kpx-Tf-Yj1" kind="presentation" modalPresentationStyle="formSheet" id="s80-zC-0pb"/>
-                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="slider" rowHeight="139" id="lkL-xf-IlC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="slider" rowHeight="139" id="lkL-xf-IlC">
                                 <rect key="frame" x="0.0" y="180" width="600" height="139"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkL-xf-IlC" id="5SS-FC-jB2">
@@ -405,14 +402,6 @@
                                                 <constraint firstAttribute="height" constant="42" id="zXh-TQ-BwG"/>
                                             </constraints>
                                         </imageView>
-                                        <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJc-1o-ndM">
-                                            <rect key="frame" x="6" y="58" width="588" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="c6R-xY-9Qv"/>
-                                            </constraints>
-                                            <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                            <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </slider>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT6-oU-Xox">
                                             <rect key="frame" x="8" y="96" width="110" height="30"/>
                                             <constraints>
@@ -423,6 +412,14 @@
                                                 <action selector="resetAlpha:" destination="oQN-87-zPa" eventType="touchUpInside" id="pH0-ZY-8VP"/>
                                             </connections>
                                         </button>
+                                        <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJc-1o-ndM">
+                                            <rect key="frame" x="6" y="58" width="588" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="c6R-xY-9Qv"/>
+                                            </constraints>
+                                            <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </slider>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lT6-oU-Xox" firstAttribute="top" secondItem="DJc-1o-ndM" secondAttribute="bottom" constant="8" symbolic="YES" id="09k-fO-XdM"/>
@@ -455,6 +452,8 @@
                     </navigationItem>
                     <connections>
                         <segue destination="RAF-aR-dNF" kind="presentation" identifier="showResult" modalPresentationStyle="formSheet" id="7A6-K8-g8O"/>
+                        <segue destination="Kpx-Tf-Yj1" kind="presentation" identifier="showColorSelector" modalPresentationStyle="formSheet" id="5R5-GY-1xP"/>
+                        <segue destination="Udn-P4-aLv" kind="presentation" identifier="showFavouritesSelector" modalPresentationStyle="formSheet" id="W4Z-Pk-owH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhy-0s-Lm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -784,6 +783,84 @@
             </objects>
             <point key="canvasLocation" x="3752" y="1390"/>
         </scene>
+        <!--Select From Favourites-->
+        <scene sceneID="sVU-YI-vsx">
+            <objects>
+                <tableViewController id="CXW-td-Dvj" customClass="FavouritesSelectorController" customModule="ColorBible" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3JK-LI-4IC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" id="D0D-gj-bQz">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0D-gj-bQz" id="AKA-lM-tse">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="GeG-KU-NDI">
+                                            <rect key="frame" x="8" y="0.0" width="42" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="cqU-sH-1QK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-iD-wqz">
+                                            <rect key="frame" x="58" y="11" width="192" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="192" id="GFq-r1-fZN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h0g-iD-wqz" firstAttribute="leading" secondItem="GeG-KU-NDI" secondAttribute="trailing" constant="8" symbolic="YES" id="Lck-R3-edP"/>
+                                        <constraint firstItem="GeG-KU-NDI" firstAttribute="centerY" secondItem="AKA-lM-tse" secondAttribute="centerY" id="Lgb-Xa-W3K"/>
+                                        <constraint firstItem="GeG-KU-NDI" firstAttribute="centerY" secondItem="h0g-iD-wqz" secondAttribute="centerY" id="TI6-sH-KVo"/>
+                                        <constraint firstItem="GeG-KU-NDI" firstAttribute="top" secondItem="AKA-lM-tse" secondAttribute="top" id="n7f-fd-am5"/>
+                                        <constraint firstItem="GeG-KU-NDI" firstAttribute="leading" secondItem="AKA-lM-tse" secondAttribute="leadingMargin" id="zvs-pU-ln0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CXW-td-Dvj" id="MnR-h6-Wbh"/>
+                            <outlet property="delegate" destination="CXW-td-Dvj" id="aSy-Sg-MH9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select From Favourites" id="9WN-v8-JlE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QIT-6a-XMm">
+                            <connections>
+                                <segue destination="kdh-Sh-OHX" kind="unwind" unwindAction="unwindWithoutSelection:" id="Ef6-Oo-Mqs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="kdh-Sh-OHX" kind="unwind" identifier="backToMixer" unwindAction="unwind:" id="ENk-MU-Obv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pi6-Yl-BIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3288" y="2259"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nck-wb-POv">
+            <objects>
+                <navigationController id="Udn-P4-aLv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rhi-Dz-DP2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CXW-td-Dvj" kind="relationship" relationship="rootViewController" id="Q6U-tW-19I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfT-bX-t05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2321" y="2259"/>
+        </scene>
         <!--Color Passer Controller-->
         <scene sceneID="KC2-dq-gRg">
             <objects>
@@ -955,6 +1032,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Select a Color" id="ALR-LN-n5h">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="L4I-Zb-G3a">
+                            <connections>
+                                <segue destination="kdh-Sh-OHX" kind="unwind" unwindAction="unwindWithoutSelection:" id="qGM-vq-5yn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="O2j-Z9-Y4S">
                             <connections>
                                 <segue destination="kdh-Sh-OHX" kind="unwind" identifier="exitSelector" unwindAction="unwind:" id="dhq-D5-fRQ"/>
@@ -991,6 +1073,6 @@
         <image name="random color filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7A6-K8-g8O"/>
+        <segue reference="FL8-pc-g9i"/>
     </inferredMetricsTieBreakers>
 </document>

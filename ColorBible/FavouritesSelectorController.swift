@@ -1,20 +1,14 @@
 import UIKit
 import CoreData
 
-class FavouritesController: UITableViewController {
-
+class FavouritesSelectorController: UITableViewController {
     var favourites: [Favourites] = []
     let dataContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
     var colorToPass: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         tableView.rowHeight = 44
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         if dataContext != nil {
             let entity = NSEntityDescription.entityForName("Favourites", inManagedObjectContext: dataContext)
             let request = NSFetchRequest()
@@ -33,7 +27,7 @@ class FavouritesController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favourites.count
     }
@@ -50,28 +44,20 @@ class FavouritesController: UITableViewController {
         
         return cell!
     }
-
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            dataContext.deleteObject(favourites[indexPath.row])
-            dataContext.saveData()
-            favourites.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
-        }
+        return false
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         colorToPass = UIColor.hexColor(favourites[indexPath.row].colorValue!.intValue)
-        performSegueWithIdentifier("favToDetails", sender: self)
+        
+        performSegueWithIdentifier("backToMixer", sender: self)
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let vc = segue.destinationViewController as? ColorPasserController {
-            vc.color = colorToPass
+        if let vc = segue.destinationViewController as? ColorMixerController {
+            vc.colorSelected = self.colorToPass
         }
     }
 }

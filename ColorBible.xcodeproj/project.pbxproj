@@ -15,6 +15,7 @@
 		5AE0015E1CAA47A10058B744 /* ColorBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE0015D1CAA47A10058B744 /* ColorBibleTests.swift */; };
 		5AE001691CAA47A10058B744 /* ColorBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001681CAA47A10058B744 /* ColorBibleUITests.swift */; };
 		5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE001761CAA872B0058B744 /* ColorSelectorController.swift */; };
+		5AEB731D1CB0F1300052B7C6 /* FavouritesSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB731C1CB0F1300052B7C6 /* FavouritesSelectorController.swift */; };
 		5AEF52F21CADE7CE001EEB5C /* ColorSchemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF52F11CADE7CE001EEB5C /* ColorSchemeController.swift */; };
 		5AEF52F41CAE69EA001EEB5C /* ColorSelectorDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF52F31CAE69EA001EEB5C /* ColorSelectorDialogController.swift */; };
 		5AEF52F61CAE6E80001EEB5C /* ColorMixerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF52F51CAE6E80001EEB5C /* ColorMixerController.swift */; };
@@ -61,6 +62,7 @@
 		5AE001681CAA47A10058B744 /* ColorBibleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBibleUITests.swift; sourceTree = "<group>"; };
 		5AE0016A1CAA47A10058B744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE001761CAA872B0058B744 /* ColorSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelectorController.swift; sourceTree = "<group>"; };
+		5AEB731C1CB0F1300052B7C6 /* FavouritesSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesSelectorController.swift; sourceTree = "<group>"; };
 		5AEF52F11CADE7CE001EEB5C /* ColorSchemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemeController.swift; sourceTree = "<group>"; };
 		5AEF52F31CAE69EA001EEB5C /* ColorSelectorDialogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelectorDialogController.swift; sourceTree = "<group>"; };
 		5AEF52F51CAE6E80001EEB5C /* ColorMixerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMixerController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				5AEF52F11CADE7CE001EEB5C /* ColorSchemeController.swift */,
 				5AEF52F31CAE69EA001EEB5C /* ColorSelectorDialogController.swift */,
 				5AEF52F51CAE6E80001EEB5C /* ColorMixerController.swift */,
+				5AEB731C1CB0F1300052B7C6 /* FavouritesSelectorController.swift */,
 				5AEFC3311CAB767C003309C5 /* ColorCell.swift */,
 				5AE0014F1CAA47A10058B744 /* Assets.xcassets */,
 				5AE001511CAA47A10058B744 /* LaunchScreen.storyboard */,
@@ -310,6 +313,7 @@
 				5AEFADF41CAD388200F2D52F /* Toast.swift in Sources */,
 				5AEF52F61CAE6E80001EEB5C /* ColorMixerController.swift in Sources */,
 				5AEFADEE1CAD194400F2D52F /* Favourites.swift in Sources */,
+				5AEB731D1CB0F1300052B7C6 /* FavouritesSelectorController.swift in Sources */,
 				5AE001461CAA47A10058B744 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

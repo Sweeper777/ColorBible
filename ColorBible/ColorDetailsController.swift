@@ -29,6 +29,8 @@ class ColorDetailsController: UITableViewController {
         
         ToastManager.shared.queueEnabled = false
         ToastManager.shared.tapToDismissEnabled = true
+        
+        tableView.rowHeight = 44
     }
 
     @IBAction func addFavouriteClick(sender: UIBarButtonItem) {
