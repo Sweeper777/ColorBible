@@ -44,7 +44,7 @@ class ColorDetailsController: UITableViewController {
             
             for item in favourites! {
                 if item.colorValue == self.color.intValue() {
-                    self.view.makeToast("Your favourites already contains this color!", duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                    self.view.makeToast(NSLocalizedString("Your favourites already contain this color!", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
                     return
                 }
             }
@@ -52,9 +52,9 @@ class ColorDetailsController: UITableViewController {
             _ = Favourites(entity: entity!, insertIntoManagedObjectContext: dataContext, color: Int32(self.color.intValue()))
             
             if dataContext.saveData() {
-                self.view.makeToast(String(format: "The color %@ has been added to your favourites.", self.color.hexDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
+                self.view.makeToast(String(format: NSLocalizedString("The color %@ has been added to your favourites.", comment: ""), self.color.hexDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
             } else {
-                self.view.makeToast(String(format: "An error occurred while adding the color to your favourites.", self.color.intValue()))
+                self.view.makeToast(String(format: NSLocalizedString("An error occurred while adding the color to your favourites.", comment: ""), self.color.intValue()))
             }
         }
 

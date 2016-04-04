@@ -25,11 +25,11 @@ class ColorMixerController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "First Color"
+            return NSLocalizedString("First Color", comment: "")
         case 1:
-            return "Second Color"
+            return NSLocalizedString("Second Color", comment: "")
         case 2:
-            return "Transparency"
+            return NSLocalizedString("Transparency", comment: "")
         default:
             return nil
         }
@@ -42,7 +42,7 @@ class ColorMixerController: UITableViewController {
                 let image = cell.viewWithTag(1) as! UIImageView
                 let label = cell.viewWithTag(2) as! UILabel
                 image.backgroundColor = nil
-                label.text = "Not Selected"
+                label.text = NSLocalizedString("Not Selected", comment: "")
                 return cell
             } else {
                 return tableView.dequeueReusableCellWithIdentifier("selectButton")!
@@ -73,11 +73,11 @@ class ColorMixerController: UITableViewController {
                 }
                 
                 selectColorFor = indexPath.section
-                let alert = UIAlertController(title: "Select a color from", message: nil, preferredStyle: .ActionSheet)
-                alert.addAction(UIAlertAction(title: "Favourites", style: .Default, handler: showFav))
-                alert.addAction(UIAlertAction(title: "Color Selector", style: .Default, handler: showSelector))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                alert.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)
+                let alert = UIAlertController(title: NSLocalizedString("Select a color from", comment: ""), message: nil, preferredStyle: .ActionSheet)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Favourites", comment: ""), style: .Default, handler: showFav))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Color Selector", comment: ""), style: .Default, handler: showSelector))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: nil))
+                alert.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)?.textLabel
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
@@ -113,7 +113,7 @@ class ColorMixerController: UITableViewController {
         let color1 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(1)! as! UIImageView).backgroundColor
         let color2 = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(2)! as! UIImageView).backgroundColor
         if color1 == nil || color2 == nil {
-            self.view.makeToast("Please select 2 colors before mixing", duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+            self.view.makeToast(NSLocalizedString("Please select 2 colors before mixing", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
         } else {
             performSegueWithIdentifier("showResult", sender: self)
         }

@@ -160,15 +160,15 @@ class ColorSchemeController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Triadic"
+            return NSLocalizedString("Triadic", comment: "")
         case 1:
-            return "Split Complements"
+            return NSLocalizedString("Split Complements", comment: "")
         case 2:
-            return "Analogous"
+            return NSLocalizedString("Analogous", comment: "")
         case 3:
-            return "Monochromatic"
+            return NSLocalizedString("Monochromatic", comment: "")
         case 4:
-            return "Complements"
+            return NSLocalizedString("Complements", comment: "")
         default:
             return nil
         }

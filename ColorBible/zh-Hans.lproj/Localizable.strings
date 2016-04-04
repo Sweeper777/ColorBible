@@ -1,0 +1,20 @@
+"Your favourites already contain this color!" = "收藏中已含有此颜色！";
+"The color %@ has been added to your favourites." = "颜色 %@ 已被加入收藏";
+"An error occurred while adding the color to your favourites." = "加入收藏时出现错误！";
+
+"Triadic" = "三等分";
+"Split Complements" = "补色分割";
+"Analogous" = "相似色";
+"Monochromatic" = "单色";
+"Complements" = "补色";
+
+"First Color" = "颜色1";
+"Second Color" = "颜色2";
+"Transparency" = "透明度";
+"Not Selected" = "未选择";
+
+"Select a color from" = "从哪里选择颜色？";
+"Favourites" = "收藏";
+"Color Selector" = "颜色选择器";
+"Cancel" = "取消";
+"Please select 2 colors before mixing" = "在混合前请选择两个颜色！";

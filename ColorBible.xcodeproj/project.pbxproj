@@ -28,7 +28,7 @@
 		5AEFADF61CAD468D00F2D52F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFADF51CAD468D00F2D52F /* QuartzCore.framework */; };
 		5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */; };
 		5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC3311CAB767C003309C5 /* ColorCell.swift */; };
-		5AF5369B1CB216EC006858C8 /* Loccalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AF5369D1CB216EC006858C8 /* Loccalizable.strings */; };
+		5AF5369B1CB216EC006858C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AF5369D1CB216EC006858C8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,7 @@
 		5AEFC3311CAB767C003309C5 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		5AF536971CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5AF536981CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		5AF5369C1CB216EC006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Loccalizable.strings"; sourceTree = "<group>"; };
+		5AF5369C1CB216EC006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 				5AE0014C1CAA47A10058B744 /* ColorBible.xcdatamodeld */,
 				5AEFADEB1CAD194400F2D52F /* Favourites+CoreDataProperties.swift */,
 				5AEFADEC1CAD194400F2D52F /* Favourites.swift */,
-				5AF5369D1CB216EC006858C8 /* Loccalizable.strings */,
+				5AF5369D1CB216EC006858C8 /* Localizable.strings */,
 			);
 			path = ColorBible;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE001531CAA47A10058B744 /* LaunchScreen.storyboard in Resources */,
-				5AF5369B1CB216EC006858C8 /* Loccalizable.strings in Resources */,
+				5AF5369B1CB216EC006858C8 /* Localizable.strings in Resources */,
 				5AE001501CAA47A10058B744 /* Assets.xcassets in Resources */,
 				5AE0014B1CAA47A10058B744 /* Main.storyboard in Resources */,
 			);
@@ -374,12 +374,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		5AF5369D1CB216EC006858C8 /* Loccalizable.strings */ = {
+		5AF5369D1CB216EC006858C8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5AF5369C1CB216EC006858C8 /* zh-Hans */,
 			);
-			name = Loccalizable.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
