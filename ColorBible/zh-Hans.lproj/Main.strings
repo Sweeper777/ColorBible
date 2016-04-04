@@ -1,0 +1,144 @@
+
+/* Class = "UILabel"; text = "Preview"; ObjectID = "0aJ-jw-MEg"; */
+"0aJ-jw-MEg.text" = "预览";
+
+/* Class = "UILabel"; text = "Green"; ObjectID = "0zw-V7-0RV"; */
+"0zw-V7-0RV.text" = "绿";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1Lr-km-cyQ"; */
+"1Lr-km-cyQ.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Mix"; ObjectID = "4UN-yB-oqo"; */
+"4UN-yB-oqo.title" = "混合";
+
+/* Class = "UILabel"; text = "Preview"; ObjectID = "4eK-qR-u3v"; */
+"4eK-qR-u3v.text" = "预览";
+
+/* Class = "UILabel"; text = "R"; ObjectID = "69H-f3-jc8"; */
+"69H-f3-jc8.text" = "R";
+
+/* Class = "UILabel"; text = "Saturation"; ObjectID = "8LY-qy-KYm"; */
+"8LY-qy-KYm.text" = "饱和";
+
+/* Class = "UINavigationItem"; title = "Color Mixer"; ObjectID = "8rK-MN-gGG"; */
+"8rK-MN-gGG.title" = "颜色混合器";
+
+/* Class = "UINavigationItem"; title = "Select From Favourites"; ObjectID = "9WN-v8-JlE"; */
+"9WN-v8-JlE.title" = "从收藏里选择";
+
+/* Class = "UITabBarItem"; title = "Color Selector"; ObjectID = "AEA-ce-Bd2"; */
+"AEA-ce-Bd2.title" = "颜色选择器";
+
+/* Class = "UINavigationItem"; title = "Select a Color"; ObjectID = "ALR-LN-n5h"; */
+"ALR-LN-n5h.title" = "选择一个颜色";
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "Aav-3b-pri"; */
+"Aav-3b-pri.title" = "收藏";
+
+/* Class = "UILabel"; text = "G"; ObjectID = "EFp-we-Doc"; */
+"EFp-we-Doc.text" = "G";
+
+/* Class = "UITableViewSection"; headerTitle = "rgb"; ObjectID = "Etx-jp-OZ9"; */
+"Etx-jp-OZ9.headerTitle" = "rgb";
+
+/* Class = "UISegmentedControl"; Eyh-xl-HIv.segmentTitles[0] = "RGB"; ObjectID = "Eyh-xl-HIv"; */
+"Eyh-xl-HIv.segmentTitles[0]" = "RGB";
+
+/* Class = "UISegmentedControl"; Eyh-xl-HIv.segmentTitles[1] = "HSV"; ObjectID = "Eyh-xl-HIv"; */
+"Eyh-xl-HIv.segmentTitles[1]" = "HSV";
+
+/* Class = "UINavigationItem"; title = "Favourites"; ObjectID = "GIF-2O-VFp"; */
+"GIF-2O-VFp.title" = "收藏";
+
+/* Class = "UILabel"; text = "255"; ObjectID = "IgX-Pp-set"; */
+"IgX-Pp-set.text" = "255";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "IwG-lf-VxT"; */
+"IwG-lf-VxT.text" = "1.0";
+
+/* Class = "UILabel"; text = "Blue"; ObjectID = "Jte-7O-DNq"; */
+"Jte-7O-DNq.text" = "蓝";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JwR-dE-kkL"; */
+"JwR-dE-kkL.text" = "Label";
+
+/* Class = "UITableViewController"; title = "Color Schemes"; ObjectID = "OKv-WY-lQw"; */
+"OKv-WY-lQw.title" = "配色方案";
+
+/* Class = "UILabel"; text = "Color Schemes"; ObjectID = "OMl-pP-Sm5"; */
+"OMl-pP-Sm5.text" = "配色方案";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "OfJ-MY-1GD"; */
+"OfJ-MY-1GD.text" = "明暗度";
+
+/* Class = "UITableViewSection"; headerTitle = "hsv"; ObjectID = "Ohb-IL-oti"; */
+"Ohb-IL-oti.headerTitle" = "hsv";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Rh1-c9-bgX"; */
+"Rh1-c9-bgX.text" = "Label";
+
+/* Class = "UILabel"; text = "R"; ObjectID = "SRl-OH-cBO"; */
+"SRl-OH-cBO.text" = "R";
+
+/* Class = "UILabel"; text = "Hex:"; ObjectID = "VjA-Zy-Zzd"; */
+"VjA-Zy-Zzd.text" = "十六进制:";
+
+/* Class = "UITabBarItem"; title = "Random Colors"; ObjectID = "X0C-Qb-EqG"; */
+"X0C-Qb-EqG.title" = "随机颜色";
+
+/* Class = "UINavigationItem"; title = "Color Selector"; ObjectID = "XCR-p9-Syg"; */
+"XCR-p9-Syg.title" = "颜色选择器";
+
+/* Class = "UILabel"; text = "G"; ObjectID = "XkG-TW-qIQ"; */
+"XkG-TW-qIQ.text" = "G";
+
+/* Class = "UILabel"; text = "B"; ObjectID = "erS-gm-QLn"; */
+"erS-gm-QLn.text" = "B";
+
+/* Class = "UILabel"; text = "255"; ObjectID = "gF4-vJ-lrM"; */
+"gF4-vJ-lrM.text" = "255";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h0g-iD-wqz"; */
+"h0g-iD-wqz.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Reset to Default"; ObjectID = "lT6-oU-Xox"; */
+"lT6-oU-Xox.normalTitle" = "重置到默认值";
+
+/* Class = "UILabel"; text = "Hue"; ObjectID = "leJ-LN-bjt"; */
+"leJ-LN-bjt.text" = "色相";
+
+/* Class = "UISegmentedControl"; mjU-Be-EZz.segmentTitles[0] = "RGB"; ObjectID = "mjU-Be-EZz"; */
+"mjU-Be-EZz.segmentTitles[0]" = "RGB";
+
+/* Class = "UISegmentedControl"; mjU-Be-EZz.segmentTitles[1] = "HSV"; ObjectID = "mjU-Be-EZz"; */
+"mjU-Be-EZz.segmentTitles[1]" = "HSV";
+
+/* Class = "UILabel"; text = "Hex:"; ObjectID = "sfn-5i-VVB"; */
+"sfn-5i-VVB.text" = "十六进制:";
+
+/* Class = "UILabel"; text = "Select a Color..."; ObjectID = "tWr-02-WOO"; */
+"tWr-02-WOO.text" = "选择一个颜色...";
+
+/* Class = "UIButton"; normalTitle = "View Color Details"; ObjectID = "uaP-Bx-hCr"; */
+"uaP-Bx-hCr.normalTitle" = "详细信息";
+
+/* Class = "UINavigationItem"; title = "Shake to Get Colors"; ObjectID = "vBC-gb-VL0"; */
+"vBC-gb-VL0.title" = "摇晃以获取颜色";
+
+/* Class = "UILabel"; text = "Red"; ObjectID = "vji-wj-Y0r"; */
+"vji-wj-Y0r.text" = "红";
+
+/* Class = "UILabel"; text = "B"; ObjectID = "wbL-oN-sU4"; */
+"wbL-oN-sU4.text" = "B";
+
+/* Class = "UILabel"; text = "255"; ObjectID = "yp3-8v-FcD"; */
+"yp3-8v-FcD.text" = "255";
+
+/* Class = "UITabBarItem"; title = "Color Mixer"; ObjectID = "zEV-tV-5Kd"; */
+"zEV-tV-5Kd.title" = "颜色混合器";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "zZ5-ni-dgM"; */
+"zZ5-ni-dgM.text" = "1.0";
+
+/* Class = "UILabel"; text = "1.0"; ObjectID = "zjf-VA-W8i"; */
+"zjf-VA-W8i.text" = "1.0";
