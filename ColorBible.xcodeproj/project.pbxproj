@@ -76,6 +76,9 @@
 		5AEFADF51CAD468D00F2D52F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColorsViewController.swift; sourceTree = "<group>"; };
 		5AEFC3311CAB767C003309C5 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		5AF467091CB381BC0037398B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		5AF4670A1CB381BC0037398B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5AF4670B1CB381BC0037398B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5AF536971CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5AF536981CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		5AF5369C1CB216EC006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 5AE001391CAA47A00058B744;
 			productRefGroup = 5AE001431CAA47A10058B744 /* Products */;
@@ -361,6 +365,7 @@
 			children = (
 				5AE0014A1CAA47A10058B744 /* Base */,
 				5AF536971CB21562006858C8 /* zh-Hans */,
+				5AF467091CB381BC0037398B /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 			children = (
 				5AE001521CAA47A10058B744 /* Base */,
 				5AF536981CB21562006858C8 /* zh-Hans */,
+				5AF4670A1CB381BC0037398B /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5AF5369C1CB216EC006858C8 /* zh-Hans */,
+				5AF4670B1CB381BC0037398B /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
