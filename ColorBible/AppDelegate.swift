@@ -13,11 +13,34 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var imageView: UIImageView!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        imageView = UIImageView(image: UIImage(named: "splash"))
+        imageView.frame = CGRectMake(CGRectGetMinX(window!.rootViewController!.view!.bounds),CGRectGetMinY(window!.rootViewController!.view!.bounds), window!.rootViewController!.view!.bounds.width, window!.rootViewController!.view!.bounds.height)
+        imageView.contentMode = .ScaleAspectFill
+        let appIcon = UIImageView(image: UIImage(named: "logo"))
+        let viewFrame = imageView.bounds
+        let appIconWidth = appIcon.bounds.width
+        let appIconHeight = appIcon.bounds.height
+        let x = CGRectGetMidX(viewFrame) - appIconWidth / 2
+        let y = CGRectGetMidY(viewFrame) - appIconHeight / 2
+        appIcon.frame = CGRectMake(x, y, appIconWidth, appIconHeight)
+        imageView.addSubview(appIcon)
+        self.window?.rootViewController!.view!.addSubview(imageView)
+        self.window?.rootViewController!.view!.bringSubviewToFront(imageView)
+        self.window!.makeKeyAndVisible()
+        self.performSelector(#selector(fadeOutSplash), withObject: self, afterDelay: 2)
+
         return true
+    }
+    
+    func fadeOutSplash() {
+        UIView.transitionWithView(self.window!, duration: 1.0, options: .TransitionNone, animations: {() -> Void in
+            self.imageView.alpha = 0.0
+            }, completion: {(finished: Bool) -> Void in
+                self.imageView.removeFromSuperview()
+        })
     }
 
     func applicationWillResignActive(application: UIApplication) {
