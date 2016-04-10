@@ -1,6 +1,6 @@
 import UIKit
 
-class ColorSelectorController: UITableViewController {
+class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var hexField: UITextField!
     @IBOutlet var preview: UIView!
     @IBOutlet var colorModeSelector: UISegmentedControl!
@@ -15,6 +15,15 @@ class ColorSelectorController: UITableViewController {
     override func viewDidLoad() {
         loadCurrentColor()
         tableView.userInteractionEnabled = true
+        hexField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
+    @IBAction func tapped(sender: AnyObject) {
+        view.endEditing(true)
     }
     
     @IBAction func colorDetailsClick(sender: UIButton) {
@@ -75,6 +84,22 @@ class ColorSelectorController: UITableViewController {
         if let vc = segue.destinationViewController as? ColorPasserController {
             vc.color = preview.backgroundColor
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return true
     }
 }
 

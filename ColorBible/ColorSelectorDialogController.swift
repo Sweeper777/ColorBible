@@ -1,6 +1,6 @@
 import UIKit
 
-class ColorSelectorDialogController: UITableViewController {
+class ColorSelectorDialogController: UITableViewController, UIGestureRecognizerDelegate {
     @IBOutlet var hexField: UITextField!
     @IBOutlet var preview: UIView!
     @IBOutlet var colorModeSelector: UISegmentedControl!
@@ -14,6 +14,13 @@ class ColorSelectorDialogController: UITableViewController {
     
     override func viewDidLoad() {
         loadCurrentColor()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
+    @IBAction func tapped(sender: AnyObject) {
+        view.endEditing(true)
     }
     
     @IBAction func colorModeChanged(sender: UISegmentedControl) {
@@ -64,6 +71,10 @@ class ColorSelectorDialogController: UITableViewController {
         }
         
         hexField.text = color.hexDescription()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
