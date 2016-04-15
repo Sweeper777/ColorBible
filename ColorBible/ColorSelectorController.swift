@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var hexField: UITextField!
@@ -153,5 +154,24 @@ extension UIColor {
         let b = Int(bF * 255.0)
         
         return "#" + String(format: "%02x%02x%02x", r, g, b)
+    }
+    
+    public func properDescription() -> String {
+        let dataContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+        if dataContext != nil {
+            let entity = NSEntityDescription.entityForName("ColorNamePair", inManagedObjectContext: dataContext)
+            let request = NSFetchRequest()
+            request.entity = entity
+            let colorNamePairs = try? dataContext.executeFetchRequest(request)
+            if let pairs = colorNamePairs {
+                for item in pairs {
+                    let pair = item as! ColorNamePair
+                    if pair.colorValue == self.intValue() {
+                        return pair.colorName!
+                    }
+                }
+            }
+        }
+        return self.hexDescription()
     }
 }
