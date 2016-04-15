@@ -29,6 +29,8 @@
 		5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */; };
 		5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC3311CAB767C003309C5 /* ColorCell.swift */; };
 		5AF5369B1CB216EC006858C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AF5369D1CB216EC006858C8 /* Localizable.strings */; };
+		5AF720171CC0E54100C3F691 /* ColorNamePair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF720151CC0E54100C3F691 /* ColorNamePair+CoreDataProperties.swift */; };
+		5AF720181CC0E54100C3F691 /* ColorNamePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF720161CC0E54100C3F691 /* ColorNamePair.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		5AF536971CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5AF536981CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		5AF5369C1CB216EC006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5AF720151CC0E54100C3F691 /* ColorNamePair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ColorNamePair+CoreDataProperties.swift"; path = "../ColorNamePair+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5AF720161CC0E54100C3F691 /* ColorNamePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorNamePair.swift; path = ../ColorNamePair.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				5AE0014C1CAA47A10058B744 /* ColorBible.xcdatamodeld */,
 				5AEFADEB1CAD194400F2D52F /* Favourites+CoreDataProperties.swift */,
 				5AEFADEC1CAD194400F2D52F /* Favourites.swift */,
+				5AF720151CC0E54100C3F691 /* ColorNamePair+CoreDataProperties.swift */,
+				5AF720161CC0E54100C3F691 /* ColorNamePair.swift */,
 				5AF5369D1CB216EC006858C8 /* Localizable.strings */,
 			);
 			path = ColorBible;
@@ -318,7 +324,9 @@
 				5AEFADE81CACC2F200F2D52F /* ColorPasserController.swift in Sources */,
 				5AE001771CAA872B0058B744 /* ColorSelectorController.swift in Sources */,
 				5AEFADF01CAD1CDB00F2D52F /* FavouritesController.swift in Sources */,
+				5AF720171CC0E54100C3F691 /* ColorNamePair+CoreDataProperties.swift in Sources */,
 				5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */,
+				5AF720181CC0E54100C3F691 /* ColorNamePair.swift in Sources */,
 				5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */,
 				5AEFADF41CAD388200F2D52F /* Toast.swift in Sources */,
 				5AEF52F61CAE6E80001EEB5C /* ColorMixerController.swift in Sources */,
