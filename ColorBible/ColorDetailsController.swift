@@ -15,7 +15,7 @@ class ColorDetailsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = color.hexDescription()
+        title = color.properDescription()
         colorTuple = UIColor.hexStringToColor(title!)
         colorPreview.backgroundColor = color
         
@@ -52,7 +52,7 @@ class ColorDetailsController: UITableViewController {
             _ = Favourites(entity: entity!, insertIntoManagedObjectContext: dataContext, color: Int32(self.color.intValue()))
             
             if dataContext.saveData() {
-                self.view.makeToast(String(format: NSLocalizedString("The color %@ has been added to your favourites.", comment: ""), self.color.hexDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
+                self.view.makeToast(String(format: NSLocalizedString("The color %@ has been added to your favourites.", comment: ""), self.color.properDescription()), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
             } else {
                 self.view.makeToast(String(format: NSLocalizedString("An error occurred while adding the color to your favourites.", comment: ""), self.color.intValue()))
             }

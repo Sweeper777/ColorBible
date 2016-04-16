@@ -40,7 +40,7 @@ class FavouritesSelectorController: UITableViewController {
         let fav = favourites[indexPath.row]
         let favColor = UIColor.hexColor(fav.colorValue!.intValue)
         imageView.backgroundColor = favColor
-        label.text = favColor.hexDescription()
+        label.text = favColor.properDescription()
         
         return cell!
     }

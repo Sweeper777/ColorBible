@@ -9,7 +9,7 @@ class ColorCell: UICollectionViewCell {
         
         set {
             backgroundColor = newValue
-            label.text = backgroundColor?.hexDescription()
+            label.text = backgroundColor?.properDescription()
             label.textColor = UIColor.hexColor(~Int32((backgroundColor?.intValue())!))
             label.frame = CGRect(x: 5, y: CGRectGetMidY(self.bounds), width: self.frame.width, height: self.frame.height)
             label.font = UIFont(name: "Helvetica", size: 10)

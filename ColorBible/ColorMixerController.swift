@@ -88,7 +88,7 @@ class ColorMixerController: UITableViewController {
         let image = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: selectColorFor))!.viewWithTag(1)!
         
         image.backgroundColor = colorSelected
-        label.text = colorSelected.hexDescription()
+        label.text = colorSelected.properDescription()
         
         let sliderImage = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(selectColorFor + 1)! as! UIImageView
         let slider = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(3)! as! UISlider

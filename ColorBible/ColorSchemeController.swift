@@ -37,7 +37,7 @@ class ColorSchemeController: UITableViewController {
         
         func setColor(color: UIColor) {
             imageView.backgroundColor = color
-            label.text = color.hexDescription()
+            label.text = color.properDescription()
         }
         
         switch indexPath.section {
