@@ -13,10 +13,12 @@ class ColorDetailsController: UITableViewController {
     @IBOutlet var sLabel: UILabel!
     @IBOutlet var vLabel: UILabel!
     
+    let dataContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = color.properDescription()
-        colorTuple = UIColor.hexStringToColor(title!)
+        colorTuple = UIColor.hexStringToColor(color.hexDescription())
         colorPreview.backgroundColor = color
         
         rLabel.text = "\(Int(colorTuple.r * 255.0)) (\(colorTuple.r))"
@@ -34,8 +36,6 @@ class ColorDetailsController: UITableViewController {
     }
 
     @IBAction func addFavouriteClick(sender: UIBarButtonItem) {
-        let dataContext: NSManagedObjectContext! = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext
-        
         if dataContext != nil {
             let entity = NSEntityDescription.entityForName("Favourites", inManagedObjectContext: dataContext)
             let request = NSFetchRequest()
@@ -67,7 +67,32 @@ class ColorDetailsController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 3 && indexPath.row == 0 {
             performSegueWithIdentifier("showSchemes", sender: self)
+        } else if indexPath.section == 4 && indexPath.row == 0 {
+            showNamingAlert()
         }
+    }
+    
+    private func showNamingAlert() {
+        let alert = UIAlertController(title: String(format: NSLocalizedString("Rename \"%@\"", comment: ""), color.properDescription()), message: nil, preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.placeholder = NSLocalizedString("Enter Name", comment: "")
+        })
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Default, handler: {
+            (action) -> Void in
+            let trimmedText = alert.textFields?.first?.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) ?? ""
+            if trimmedText == "" {
+                self.view.makeToast(NSLocalizedString("Color name cannot be empty", comment: ""), duration: 5.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                return
+            }
+            
+            _ = ColorNamePair.self(entity: NSEntityDescription.entityForName("ColorNamePair", inManagedObjectContext: self.dataContext)!, insertIntoManagedObjectContext: self.dataContext, color: Int32(self.color.intValue()), colorName: (alert.textFields?.first!.text)!)
+            
+            self.dataContext.saveData()
+            self.view.makeToast(NSLocalizedString("Color has successfully been renamed.", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
