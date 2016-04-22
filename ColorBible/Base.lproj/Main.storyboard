@@ -192,7 +192,13 @@
                             <outlet property="delegate" destination="gen-q2-8R7" id="Jnr-Qy-c3a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Color Selector" id="XCR-p9-Syg"/>
+                    <navigationItem key="navigationItem" title="Color Selector" id="XCR-p9-Syg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="IaI-IL-fSY">
+                            <connections>
+                                <action selector="cameraTapped:" destination="gen-q2-8R7" id="SuZ-xh-uo0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorModeSelector" destination="Eyh-xl-HIv" id="bYO-Bg-Rdq"/>
                         <outlet property="firstLabel" destination="SRl-OH-cBO" id="SpY-h0-DRc"/>

@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet var hexField: UITextField!
     @IBOutlet var preview: UIView!
     @IBOutlet var colorModeSelector: UISegmentedControl!
@@ -65,6 +65,39 @@ class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGes
                 thirdValue.value = colorTuple.v
             }
         }
+    }
+    
+    @IBAction func cameraTapped(sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: NSLocalizedString("Get a Color From a Photo", comment: ""), message: nil, preferredStyle: .ActionSheet)
+        alert.popoverPresentationController?.barButtonItem = sender
+        
+        var imagePicker: UIImagePickerController? = UIImagePickerController()
+        imagePicker!.delegate = self
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Photo Library", comment: ""), style: .Default, handler: {
+            (action) -> Void in imagePicker!.sourceType = .PhotoLibrary
+            self.presentViewController(imagePicker!, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default, handler: {
+            (action) -> Void in imagePicker!.sourceType = .Camera
+            self.presentViewController(imagePicker!, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: {
+            (action) -> Void in imagePicker = nil
+            self.presentViewController(imagePicker!, animated: true, completion: nil)
+        }))
+        
+        if imagePicker == nil {
+            return
+        }
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        // TODO: didFinishPickingImage
     }
     
     func loadCurrentColor() {
