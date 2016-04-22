@@ -70,6 +70,7 @@ class ColorDetailsController: UITableViewController {
         } else if indexPath.section == 4 && indexPath.row == 0 {
             showNamingAlert()
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     private func showNamingAlert() {
@@ -82,15 +83,17 @@ class ColorDetailsController: UITableViewController {
             (action) -> Void in
             let trimmedText = alert.textFields?.first?.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) ?? ""
             if trimmedText == "" {
-                self.view.makeToast(NSLocalizedString("Color name cannot be empty", comment: ""), duration: 5.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                self.view.makeToast(NSLocalizedString("Color name cannot be empty", comment: ""), duration: 5.0, position: .Bottom, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
                 return
             }
             
             _ = ColorNamePair.self(entity: NSEntityDescription.entityForName("ColorNamePair", inManagedObjectContext: self.dataContext)!, insertIntoManagedObjectContext: self.dataContext, color: Int32(self.color.intValue()), colorName: (alert.textFields?.first!.text)!)
             
             self.dataContext.saveData()
-            self.view.makeToast(NSLocalizedString("Color has successfully been renamed.", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
+            self.view.makeToast(NSLocalizedString("Color has successfully been renamed.", comment: ""), duration: 3.0, position: .Bottom, title: nil, image: UIImage(named: "tick"), style: nil, completion: nil)
         }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: nil))
         
         self.presentViewController(alert, animated: true, completion: nil)
     }

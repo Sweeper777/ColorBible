@@ -18,3 +18,9 @@
 "Color Selector" = "顏色選擇器";
 "Cancel" = "取消";
 "Please select 2 colors before mixing" = "在混合前請選擇兩個顏色！";
+
+"Rename \"%@\"" = "重新命名\"%@\"";
+"Enter Name" = "輸入名字";
+"OK" = "確定";
+"Color name cannot be empty" = "請填寫顏色名字！";
+"Color has successfully been renamed." = "成功命名顏色";
