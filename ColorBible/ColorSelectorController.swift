@@ -71,7 +71,7 @@ class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGes
     }
     
     @IBAction func cameraTapped(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: NSLocalizedString("Get a Color From a Photo", comment: ""), message: NSLocalizedString("The color of the pixel at the center of the image will be taken.", comment: ""), preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: NSLocalizedString("Get a Color From a Photo", comment: ""), message: NSLocalizedString("The color of the pixel at the center of the photo will be taken.", comment: ""), preferredStyle: .ActionSheet)
         alert.popoverPresentationController?.barButtonItem = sender
         
         let imagePicker: UIImagePickerController? = UIImagePickerController()

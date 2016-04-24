@@ -24,3 +24,10 @@
 "OK" = "确定";
 "Color name cannot be empty" = "请填写颜色名字！";
 "Color has successfully been renamed." = "成功命名颜色";
+
+"Get a Color From a Photo" = "从照片中获取颜色";
+"The color of the pixel at the center of the photo will be taken." = "照片中心的像素之颜色会被选取。";
+"Photo Library" = "照片库";
+"Photo Library is not available!" = "无法使用照片库";
+"Camera" = "相机";
+"Camera is not available!" = "无法使用相机";
