@@ -21,6 +21,9 @@ class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGes
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         tap.delegate = self
         view.addGestureRecognizer(tap)
+        
+        ToastManager.shared.queueEnabled = false
+        ToastManager.shared.tapToDismissEnabled = true
     }
     
     @IBAction func tapped(sender: AnyObject) {
@@ -68,36 +71,66 @@ class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGes
     }
     
     @IBAction func cameraTapped(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: NSLocalizedString("Get a Color From a Photo", comment: ""), message: nil, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: NSLocalizedString("Get a Color From a Photo", comment: ""), message: NSLocalizedString("The color of the pixel at the center of the image will be taken.", comment: ""), preferredStyle: .ActionSheet)
         alert.popoverPresentationController?.barButtonItem = sender
         
-        var imagePicker: UIImagePickerController? = UIImagePickerController()
+        let imagePicker: UIImagePickerController? = UIImagePickerController()
         imagePicker!.delegate = self
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Photo Library", comment: ""), style: .Default, handler: {
-            (action) -> Void in imagePicker!.sourceType = .PhotoLibrary
-            self.presentViewController(imagePicker!, animated: true, completion: nil)
+            (action) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+                imagePicker!.sourceType = .PhotoLibrary
+                self.presentViewController(imagePicker!, animated: true, completion: nil)
+            } else {
+                self.view.makeToast(NSLocalizedString("Photo Library is not available!", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default, handler: {
-            (action) -> Void in imagePicker!.sourceType = .Camera
-            self.presentViewController(imagePicker!, animated: true, completion: nil)
+            (action) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                imagePicker!.sourceType = .Camera
+                self.presentViewController(imagePicker!, animated: true, completion: nil)
+            } else {
+                self.view.makeToast(NSLocalizedString("Camera is not available!", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+            }
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: {
-            (action) -> Void in imagePicker = nil
-            self.presentViewController(imagePicker!, animated: true, completion: nil)
-        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: nil))
         
-        if imagePicker == nil {
-            return
-        }
+        alert.popoverPresentationController?.barButtonItem = sender
         
         presentViewController(alert, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        // TODO: didFinishPickingImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        var rF: CGFloat = 0,
+        gF: CGFloat = 0,
+        bF: CGFloat = 0,
+        aF: CGFloat = 0
+        
+        var hF: CGFloat = 0,
+        sF: CGFloat = 0,
+        vF: CGFloat = 0
+        
+        let color = image.getPixelColor(CGPointMake(image.size.width / 2, image.size.height / 2))
+        color.getRed(&rF, green: &gF, blue: &bF, alpha: &aF)
+        color.getHue(&hF, saturation: &sF, brightness: &vF, alpha: &aF)
+        
+        if colorModeSelector.selectedSegmentIndex == 0 {
+            firstValue.value = Float(rF)
+            secondValue.value = Float(gF)
+            thirdValue.value = Float(bF)
+        } else {
+            firstValue.value = Float(hF)
+            secondValue.value = Float(sF)
+            thirdValue.value = Float(vF)
+        }
+        
+        loadCurrentColor()
     }
     
     func loadCurrentColor() {
@@ -134,6 +167,23 @@ class ColorSelectorController: UITableViewController, UITextFieldDelegate, UIGes
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         return true
+    }
+}
+
+extension UIImage {
+    func getPixelColor(pos: CGPoint) -> UIColor {
+        
+        let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        
+        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
+        
+        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: a)
     }
 }
 
