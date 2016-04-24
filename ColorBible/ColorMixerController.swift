@@ -1,6 +1,6 @@
 import UIKit
 
-class ColorMixerController: UITableViewController {
+class ColorMixerController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var selectColorFor: Int!
     var colorSelected: UIColor!
     
@@ -76,6 +76,31 @@ class ColorMixerController: UITableViewController {
                 let alert = UIAlertController(title: NSLocalizedString("Select a color from", comment: ""), message: nil, preferredStyle: .ActionSheet)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Favourites", comment: ""), style: .Default, handler: showFav))
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Color Selector", comment: ""), style: .Default, handler: showSelector))
+                
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Photo Library", comment: ""), style: .Default, handler: {
+                    (action) -> Void in
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
+                    if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+                        imagePicker.sourceType = .PhotoLibrary
+                        self.presentViewController(imagePicker, animated: true, completion: nil)
+                    } else {
+                        self.view.makeToast(NSLocalizedString("Photo Library is not available!", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                    }
+                }))
+                
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default, handler: {
+                    (action) -> Void in
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.delegate = self
+                    if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+                        imagePicker.sourceType = .Camera
+                        self.presentViewController(imagePicker, animated: true, completion: nil)
+                    } else {
+                        self.view.makeToast(NSLocalizedString("Camera is not available!", comment: ""), duration: 3.0, position: .Center, title: nil, image: UIImage(named: "cross"), style: nil, completion: nil)
+                    }
+                }))
+                
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .Cancel, handler: nil))
                 alert.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)?.textLabel
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -84,20 +109,7 @@ class ColorMixerController: UITableViewController {
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
-        let label = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: selectColorFor))!.viewWithTag(2)! as! UILabel
-        let image = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: selectColorFor))!.viewWithTag(1)!
-        
-        image.backgroundColor = colorSelected
-        label.text = colorSelected.properDescription()
-        
-        let sliderImage = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(selectColorFor + 1)! as! UIImageView
-        let slider = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(3)! as! UISlider
-        if selectColorFor == 0 {
-            slider.minimumTrackTintColor = colorSelected
-        } else {
-            slider.maximumTrackTintColor = colorSelected
-        }
-        sliderImage.backgroundColor = colorSelected
+        loadSelectedColor()
     }
     
     @IBAction func unwindWithoutSelection(segue: UIStoryboardSegue) {
@@ -127,6 +139,29 @@ class ColorMixerController: UITableViewController {
             let result = color1.mixWith(color2, myAlpha: CGFloat(slider.value))
             vc.color = result
         }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        colorSelected = image.getPixelColor(CGPointMake(image.size.width / 2, image.size.height / 2))
+        loadSelectedColor()
+    }
+    
+    func loadSelectedColor() {
+        let label = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: selectColorFor))!.viewWithTag(2)! as! UILabel
+        let image = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: selectColorFor))!.viewWithTag(1)!
+        
+        image.backgroundColor = colorSelected
+        label.text = colorSelected.properDescription()
+        
+        let sliderImage = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(selectColorFor + 1)! as! UIImageView
+        let slider = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2))!.viewWithTag(3)! as! UISlider
+        if selectColorFor == 0 {
+            slider.minimumTrackTintColor = colorSelected
+        } else {
+            slider.maximumTrackTintColor = colorSelected
+        }
+        sliderImage.backgroundColor = colorSelected
     }
 }
 
