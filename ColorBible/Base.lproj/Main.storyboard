@@ -1070,12 +1070,14 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-eK-kvO">
                                                     <rect key="frame" x="25" y="44" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="9cR-jd-S2P"/>
                                                     </connections>
                                                 </slider>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-DU-l46">
                                                     <rect key="frame" x="25" y="120" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="gzK-dz-5gl"/>
                                                     </connections>
@@ -1122,6 +1124,7 @@
                                                 </segmentedControl>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-QF-NYM">
                                                     <rect key="frame" x="25" y="82" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="lI2-p8-3tg"/>
                                                     </connections>
@@ -1212,7 +1215,7 @@
         <image name="random color filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7A6-K8-g8O"/>
+        <segue reference="XCq-AZ-21w"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
