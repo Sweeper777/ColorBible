@@ -33,6 +33,8 @@ class ColorDetailsController: UITableViewController {
         ToastManager.shared.tapToDismissEnabled = true
         
         tableView.rowHeight = 44
+        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     }
 
     @IBAction func addFavouriteClick(sender: UIBarButtonItem) {

@@ -9,7 +9,9 @@ class FavouritesController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let barButtonItem = self.editButtonItem()
+        barButtonItem.tintColor = UIColor.whiteColor()
+        self.navigationItem.rightBarButtonItem = barButtonItem
         tableView.rowHeight = 44
     }
     

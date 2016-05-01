@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.23132071430000001" green="0.48063303969999999" blue="0.23132071430000001" alpha="1" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="68C-vT-8N9" kind="relationship" relationship="viewControllers" id="S6d-dd-9lE"/>
@@ -35,6 +36,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fxz-4H-Fle">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gen-q2-8R7" kind="relationship" relationship="rootViewController" id="EtG-jt-eBC"/>
@@ -85,18 +90,21 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fYr-ew-Xk3">
                                                     <rect key="frame" x="25" y="50" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="gen-q2-8R7" eventType="valueChanged" id="9bZ-Gq-dKR"/>
                                                     </connections>
                                                 </slider>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hjG-1A-0yk">
                                                     <rect key="frame" x="25" y="88" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="gen-q2-8R7" eventType="valueChanged" id="t2Y-7d-lHF"/>
                                                     </connections>
                                                 </slider>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-a7-Z8B">
                                                     <rect key="frame" x="25" y="126" width="569" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="valuesChanged:" destination="gen-q2-8R7" eventType="valueChanged" id="QJV-OV-KQA"/>
                                                     </connections>
@@ -194,6 +202,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Color Selector" id="XCR-p9-Syg">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="IaI-IL-fSY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cameraTapped:" destination="gen-q2-8R7" id="SuZ-xh-uo0"/>
                             </connections>
@@ -224,6 +233,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJt-LV-kOc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="PQ3-Q3-284" kind="relationship" relationship="rootViewController" id="gmL-j5-t6E"/>
@@ -380,10 +393,11 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="tintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="slider" rowHeight="139" id="lkL-xf-IlC">
@@ -409,6 +423,14 @@
                                                 <constraint firstAttribute="height" constant="42" id="zXh-TQ-BwG"/>
                                             </constraints>
                                         </imageView>
+                                        <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJc-1o-ndM">
+                                            <rect key="frame" x="6" y="58" width="588" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="c6R-xY-9Qv"/>
+                                            </constraints>
+                                            <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </slider>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT6-oU-Xox">
                                             <rect key="frame" x="8" y="96" width="110" height="30"/>
                                             <constraints>
@@ -419,14 +441,6 @@
                                                 <action selector="resetAlpha:" destination="oQN-87-zPa" eventType="touchUpInside" id="pH0-ZY-8VP"/>
                                             </connections>
                                         </button>
-                                        <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJc-1o-ndM">
-                                            <rect key="frame" x="6" y="58" width="588" height="31"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="c6R-xY-9Qv"/>
-                                            </constraints>
-                                            <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                            <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </slider>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lT6-oU-Xox" firstAttribute="top" secondItem="DJc-1o-ndM" secondAttribute="bottom" constant="8" symbolic="YES" id="09k-fO-XdM"/>
@@ -452,6 +466,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Color Mixer" id="8rK-MN-gGG">
                         <barButtonItem key="rightBarButtonItem" title="Mix" id="4UN-yB-oqo">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="mixClick:" destination="oQN-87-zPa" id="Pns-Pw-Dej"/>
                             </connections>
@@ -476,6 +491,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GJO-OC-eFX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="oQN-87-zPa" kind="relationship" relationship="rootViewController" id="oag-3u-5bW"/>
@@ -493,6 +512,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pax-1L-xa5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="NWk-Hw-ssN" kind="relationship" relationship="rootViewController" id="2lq-4u-DGs"/>
@@ -734,12 +757,15 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wpN-km-NXT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7gP-R2-CEZ"/>
                         <barButtonItem key="leftBarButtonItem" image="add favourite" id="N6Q-ov-OxE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addFavouriteClick:" destination="4iG-WC-8ud" id="gvg-JM-OHi"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LKM-Kv-3Tz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="doneClicked:" destination="4iG-WC-8ud" id="p0L-oW-STL"/>
                             </connections>
@@ -860,6 +886,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Select From Favourites" id="9WN-v8-JlE">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QIT-6a-XMm">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="kdh-Sh-OHX" kind="unwind" unwindAction="unwindWithoutSelection:" id="Ef6-Oo-Mqs"/>
                             </connections>
@@ -880,6 +907,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rhi-Dz-DP2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="CXW-td-Dvj" kind="relationship" relationship="rootViewController" id="Q6U-tW-19I"/>
@@ -896,6 +927,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vbn-1l-co4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="4iG-WC-8ud" kind="relationship" relationship="rootViewController" id="kvj-C4-aAk"/>
@@ -913,6 +948,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Ga-jI-wEM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="unI-RX-o4x" kind="relationship" relationship="rootViewController" id="Lp4-sS-5y5"/>
@@ -977,6 +1016,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ORV-MO-fr8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="dlF-ZM-E21" kind="relationship" relationship="rootViewController" id="z3P-d1-b7z"/>
@@ -1031,12 +1074,6 @@
                                                         <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="9cR-jd-S2P"/>
                                                     </connections>
                                                 </slider>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-QF-NYM">
-                                                    <rect key="frame" x="25" y="82" width="569" height="31"/>
-                                                    <connections>
-                                                        <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="lI2-p8-3tg"/>
-                                                    </connections>
-                                                </slider>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-DU-l46">
                                                     <rect key="frame" x="25" y="120" width="569" height="31"/>
                                                     <connections>
@@ -1083,6 +1120,12 @@
                                                         <action selector="colorModeChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="7bl-i5-pj1"/>
                                                     </connections>
                                                 </segmentedControl>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-QF-NYM">
+                                                    <rect key="frame" x="25" y="82" width="569" height="31"/>
+                                                    <connections>
+                                                        <action selector="valuesChanged:" destination="dlF-ZM-E21" eventType="valueChanged" id="lI2-p8-3tg"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cwJ-eK-kvO" firstAttribute="trailing" secondItem="lBt-ce-Gnv" secondAttribute="trailingMargin" id="6Cs-QF-wYR"/>
@@ -1126,11 +1169,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Select a Color" id="ALR-LN-n5h">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="L4I-Zb-G3a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="kdh-Sh-OHX" kind="unwind" unwindAction="unwindWithoutSelection:" id="qGM-vq-5yn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="O2j-Z9-Y4S">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="kdh-Sh-OHX" kind="unwind" identifier="exitSelector" unwindAction="unwind:" id="dhq-D5-fRQ"/>
                             </connections>
@@ -1167,6 +1212,7 @@
         <image name="random color filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZBd-dd-58h"/>
+        <segue reference="7A6-K8-g8O"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
