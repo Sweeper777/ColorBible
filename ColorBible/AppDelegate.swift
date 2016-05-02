@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ColorBible
-//
-//  Created by Mulang Su on 3/29/16.
-//  Copyright © 2016 Mulang Su. All rights reserved.
-//
-
 import UIKit
 import CoreData
 

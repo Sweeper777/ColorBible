@@ -29,9 +29,11 @@
 		5AEFC32C1CAB5C8D003309C5 /* RandomColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC32B1CAB5C8D003309C5 /* RandomColorsViewController.swift */; };
 		5AEFC3321CAB767C003309C5 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC3311CAB767C003309C5 /* ColorCell.swift */; };
 		5AF5369B1CB216EC006858C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AF5369D1CB216EC006858C8 /* Localizable.strings */; };
+		5AFB5FBA1CD74CF100E95085 /* JTSplashView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFB5FB91CD74CF100E95085 /* JTSplashView.framework */; };
 		5AFBE1FD1CC32E4F00819235 /* ColorNamePair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBE1FB1CC32E4F00819235 /* ColorNamePair+CoreDataProperties.swift */; };
 		5AFBE1FE1CC32E4F00819235 /* ColorNamePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBE1FC1CC32E4F00819235 /* ColorNamePair.swift */; };
 		5AFDA5E11CC747FD001F1C65 /* NamedColorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDA5E01CC747FD001F1C65 /* NamedColorsController.swift */; };
+		D31E7A79CC2FCE601A63397A /* Pods_ColorBible.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F612F9092A9CE57863CFE3BB /* Pods_ColorBible.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E3D2F0B885CA5479D1EB465 /* Pods-ColorBible.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBible.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBible/Pods-ColorBible.release.xcconfig"; sourceTree = "<group>"; };
 		5AE001421CAA47A10058B744 /* ColorBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE001451CAA47A10058B744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE0014A1CAA47A10058B744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +88,15 @@
 		5AF536971CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5AF536981CB21562006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		5AF5369C1CB216EC006858C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5AFB5FB51CD71B9500E95085 /* RevealingSplashView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealingSplashView.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBible-clzjwcgcaigableajasbpptngdgw/Build/Products/Debug-iphonesimulator/RevealingSplashView.framework"; sourceTree = "<group>"; };
+		5AFB5FB71CD71E6B00E95085 /* JTSplashView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTSplashView.framework; path = "Pods/../build/Debug-iphoneos/JTSplashView.framework"; sourceTree = "<group>"; };
+		5AFB5FB91CD74CF100E95085 /* JTSplashView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JTSplashView.framework; path = "../../Library/Developer/Xcode/DerivedData/ColorBible-clzjwcgcaigableajasbpptngdgw/Build/Products/Debug-iphonesimulator/JTSplashView.framework"; sourceTree = "<group>"; };
 		5AFBE1EE1CC32CB600819235 /* ColorBible 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ColorBible 2.xcdatamodel"; sourceTree = "<group>"; };
 		5AFBE1FB1CC32E4F00819235 /* ColorNamePair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorNamePair+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5AFBE1FC1CC32E4F00819235 /* ColorNamePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorNamePair.swift; sourceTree = "<group>"; };
 		5AFDA5E01CC747FD001F1C65 /* NamedColorsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedColorsController.swift; sourceTree = "<group>"; };
+		9E105B50BD61B24E99E1DDA1 /* Pods-ColorBible.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorBible.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorBible/Pods-ColorBible.debug.xcconfig"; sourceTree = "<group>"; };
+		F612F9092A9CE57863CFE3BB /* Pods_ColorBible.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorBible.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFB5FBA1CD74CF100E95085 /* JTSplashView.framework in Frameworks */,
 				5AEFADF61CAD468D00F2D52F /* QuartzCore.framework in Frameworks */,
+				D31E7A79CC2FCE601A63397A /* Pods_ColorBible.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +127,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16287DEA573E6BB167C1CE66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB5FB91CD74CF100E95085 /* JTSplashView.framework */,
+				5AFB5FB71CD71E6B00E95085 /* JTSplashView.framework */,
+				5AFB5FB51CD71B9500E95085 /* RevealingSplashView.framework */,
+				F612F9092A9CE57863CFE3BB /* Pods_ColorBible.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5AE001391CAA47A00058B744 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +146,8 @@
 				5AE0015C1CAA47A10058B744 /* ColorBibleTests */,
 				5AE001671CAA47A10058B744 /* ColorBibleUITests */,
 				5AE001431CAA47A10058B744 /* Products */,
+				9AC313441813AFBD8A87BBAB /* Pods */,
+				16287DEA573E6BB167C1CE66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +209,15 @@
 			path = ColorBibleUITests;
 			sourceTree = "<group>";
 		};
+		9AC313441813AFBD8A87BBAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E105B50BD61B24E99E1DDA1 /* Pods-ColorBible.debug.xcconfig */,
+				1E3D2F0B885CA5479D1EB465 /* Pods-ColorBible.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AE0016D1CAA47A10058B744 /* Build configuration list for PBXNativeTarget "ColorBible" */;
 			buildPhases = (
+				B6EB9D4A5C1A4764570AA5D4 /* Check Pods Manifest.lock */,
 				5AE0013E1CAA47A10058B744 /* Sources */,
 				5AE0013F1CAA47A10058B744 /* Frameworks */,
 				5AE001401CAA47A10058B744 /* Resources */,
+				04F9335D6BF08B26FFE756B3 /* Embed Pods Frameworks */,
+				CDDE66A65696C5660FCF38FC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +349,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04F9335D6BF08B26FFE756B3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorBible/Pods-ColorBible-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6EB9D4A5C1A4764570AA5D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CDDE66A65696C5660FCF38FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorBible/Pods-ColorBible-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AE0013E1CAA47A10058B744 /* Sources */ = {
@@ -492,9 +575,14 @@
 		};
 		5AE0016E1CAA47A10058B744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E105B50BD61B24E99E1DDA1 /* Pods-ColorBible.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ColorBible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -505,9 +593,14 @@
 		};
 		5AE0016F1CAA47A10058B744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3D2F0B885CA5479D1EB465 /* Pods-ColorBible.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ColorBible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
