@@ -1,10 +1,1 @@
-PODS:
-  - JTSplashView (1.0.0)
-
-DEPENDENCIES:
-  - JTSplashView
-
-SPEC CHECKSUMS:
-  JTSplashView: e7d15d11d4cba3077c9db44f1fc14de3507a12f5
-
 COCOAPODS: 0.39.0

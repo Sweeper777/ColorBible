@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ColorBible' do
-    pod 'JTSplashView'
+    
 end
 
 target 'ColorBibleTests' do

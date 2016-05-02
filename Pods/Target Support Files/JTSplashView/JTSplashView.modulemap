@@ -1,6 +1,0 @@
-framework module JTSplashView {
-  umbrella header "JTSplashView-umbrella.h"
-
-  export *
-  module * { export * }
-}
