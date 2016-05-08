@@ -3,8 +3,40 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>Pods-ColorBible.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ColorBibleTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ColorBibleUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>1DA79E3292D9FCA1B5C544A0F146C11C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3545F8857BA334F697CEDA47BF3FDC87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98E639D62090E3568A1F1E1B37176D3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

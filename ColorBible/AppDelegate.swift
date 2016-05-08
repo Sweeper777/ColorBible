@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController!.view!.addSubview(imageView)
         self.window?.rootViewController!.view!.bringSubviewToFront(imageView)
         self.window!.makeKeyAndVisible()
-        self.performSelector(#selector(fadeOutSplash), withObject: self, afterDelay: 2)
+        //self.performSelector(#selector(fadeOutSplash), withObject: self, afterDelay: 2)
 
         return true
     }

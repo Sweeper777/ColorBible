@@ -33,7 +33,6 @@
 		5AFBE1FD1CC32E4F00819235 /* ColorNamePair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBE1FB1CC32E4F00819235 /* ColorNamePair+CoreDataProperties.swift */; };
 		5AFBE1FE1CC32E4F00819235 /* ColorNamePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBE1FC1CC32E4F00819235 /* ColorNamePair.swift */; };
 		5AFDA5E11CC747FD001F1C65 /* NamedColorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDA5E01CC747FD001F1C65 /* NamedColorsController.swift */; };
-		D31E7A79CC2FCE601A63397A /* Pods_ColorBible.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F612F9092A9CE57863CFE3BB /* Pods_ColorBible.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +105,6 @@
 			files = (
 				5AFB5FBA1CD74CF100E95085 /* JTSplashView.framework in Frameworks */,
 				5AEFADF61CAD468D00F2D52F /* QuartzCore.framework in Frameworks */,
-				D31E7A79CC2FCE601A63397A /* Pods_ColorBible.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
